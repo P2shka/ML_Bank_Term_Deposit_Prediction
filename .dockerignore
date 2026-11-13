@@ -49,10 +49,6 @@ var/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Data
-bank-additional/*.csv
-bank-additional/*.txt
-
 # Unit test / coverage reports
 htmlcov/
 .tox/
