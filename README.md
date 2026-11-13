@@ -19,10 +19,18 @@ https://archive.ics.uci.edu/dataset/222/bank+marketing
 Целевая переменная: y — факт согласия клиента на открытие депозита ("yes" / "no").
 ## Инструменты
 
+* Jupyter Notebook ()
 * Pandas (обработка и очистка данных)
 * NumPy (математические вычисления)
 * Matplotlib & Seaborn (визуализация данных)
 * Scikit-learn (Машинное обучение)
+
+## Контейнеризация (Docker)
+- `Dockerfile`
+- Устанавливаются системные зависимости из `requirements.txt`, при выполнении докер запускает `02_Bank_Term_Deposit_Prediction2.ipynb`.
+
+## CI/CD
+- При каждом пуше `.github\workflows\ci.yml` запускает пайплайн, который запускает докер. 
 
 
 ## Признаки:
@@ -50,6 +58,11 @@ https://archive.ics.uci.edu/dataset/222/bank+marketing
 | nr.employed | Feature | Real | | number of employees - quarterly indicator | | no |
 | y | Target | Binary | | has the client subscribed a term deposit?| | no |
 
+
+## Выходные файлы
+`models_comparison.csv` - сравнение моделей  
+`final_classification_report.csv` - Отчёт о классификации (Precision, Recall, F1)
+`best_svm_params.csv` - Лучшие параметры GridSearchCV  
 
 # Анализ маркетинговых данных банка
 В файле 01_Bank_Marketing_EDA.ipynb мы подробно проанализировали факторы из датасета.
@@ -238,3 +251,9 @@ https://archive.ics.uci.edu/dataset/222/bank+marketing
 Методы машинного обучения успешно выявили клиентов, которые с большей вероятностью оформят срочный депозит. После сравнения пяти алгоритмов классификации метод опорных векторов (SVM) оказался наиболее эффективной моделью, достигнув наивысшего показателя F1-меры и высокой полноты (Recall).
 
 Эта модель может помочь банку более эффективно ориентироваться на потенциальных клиентов и повышать эффективность рекламных кампаний.
+
+## Запуск
+```
+docker build -t deposit-prediction .
+docker run --rm deposit-prediction
+```
