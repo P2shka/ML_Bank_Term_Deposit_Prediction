@@ -19,10 +19,9 @@ https://archive.ics.uci.edu/dataset/222/bank+marketing
 Целевая переменная: y — факт согласия клиента на открытие депозита ("yes" / "no").
 ## Инструменты
 
-* Jupyter Notebook ()
 * Pandas (обработка и очистка данных)
 * NumPy (математические вычисления)
-* Matplotlib & Seaborn (визуализация данных)
+* Jupyter Notebook, Matplotlib & Seaborn (визуализация данных)
 * Scikit-learn (Машинное обучение)
 
 ## Контейнеризация (Docker)
@@ -61,7 +60,7 @@ https://archive.ics.uci.edu/dataset/222/bank+marketing
 
 ## Выходные файлы
 `models_comparison.csv` - сравнение моделей  
-`final_classification_report.csv` - Отчёт о классификации (Precision, Recall, F1)
+`final_classification_report.csv` - Отчёт о классификации (Precision, Recall, F1)  
 `best_svm_params.csv` - Лучшие параметры GridSearchCV  
 
 # Анализ маркетинговых данных банка
